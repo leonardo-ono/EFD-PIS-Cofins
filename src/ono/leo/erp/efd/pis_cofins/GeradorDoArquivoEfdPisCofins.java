@@ -46,6 +46,9 @@ public class GeradorDoArquivoEfdPisCofins {
     private Map<String, Registro9900> registros9900 
             = new HashMap<String, Registro9900>();
     
+    private Map<String, RegistroX001> registrosX001
+            = new HashMap<String, RegistroX001>();
+    
     private List<Registro> registros = new ArrayList<Registro>();
     private Set<RegistroX990> registrosX990 = new HashSet<RegistroX990>();
     private Registro9999 registro9999 = new Registro9999();
@@ -103,6 +106,16 @@ public class GeradorDoArquivoEfdPisCofins {
     private void addRegistroInterno(Registro registro) {
         if (registros.contains(registro)) {
             return;
+        }
+        if (registro instanceof RegistroX001) {
+            registrosX001.put(registro.getBloco(), (RegistroX001) registro);
+        }
+        if (!(registro instanceof RegistroX001) 
+                && !(registro instanceof RegistroX990) 
+                && !(registro instanceof Registro0000)
+                && !(registro instanceof Registro9900)) {
+                    
+                    registrosX001.get(registro.getBloco()).setIND_MOV("0");
         }
         atualizarQuantidadeDeRegistroPorBloco(registro);
         registros.add(registro);
