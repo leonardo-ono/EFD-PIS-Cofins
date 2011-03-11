@@ -1,40 +1,19 @@
 package ono.leo.erp.efd.pis_cofins;
 
-import ono.leo.erp.efd.pis_cofins.bloco0.Registro0000;
-import ono.leo.erp.efd.pis_cofins.bloco0.Registro0001;
-import ono.leo.erp.efd.pis_cofins.bloco0.Registro0110;
-import ono.leo.erp.efd.pis_cofins.bloco0.Registro0140;
 import ono.leo.erp.efd.pis_cofins.bloco0.Registro0150;
 import ono.leo.erp.efd.pis_cofins.bloco0.Registro0190;
 import ono.leo.erp.efd.pis_cofins.bloco0.Registro0200;
 import ono.leo.erp.efd.pis_cofins.bloco0.Registro0400;
-import ono.leo.erp.efd.pis_cofins.bloco0.Registro0990;
-import ono.leo.erp.efd.pis_cofins.bloco1.Registro1001;
-import ono.leo.erp.efd.pis_cofins.bloco1.Registro1990;
-import ono.leo.erp.efd.pis_cofins.bloco9.Registro9001;
-import ono.leo.erp.efd.pis_cofins.bloco9.Registro9990;
-import ono.leo.erp.efd.pis_cofins.blocoA.RegistroA001;
-import ono.leo.erp.efd.pis_cofins.blocoA.RegistroA990;
-import ono.leo.erp.efd.pis_cofins.blocoC.RegistroC001;
 import ono.leo.erp.efd.pis_cofins.blocoC.RegistroC010;
 import ono.leo.erp.efd.pis_cofins.blocoC.RegistroC100;
 import ono.leo.erp.efd.pis_cofins.blocoC.RegistroC170;
-import ono.leo.erp.efd.pis_cofins.blocoC.RegistroC990;
-import ono.leo.erp.efd.pis_cofins.blocoD.RegistroD001;
-import ono.leo.erp.efd.pis_cofins.blocoD.RegistroD990;
-import ono.leo.erp.efd.pis_cofins.blocoF.RegistroF001;
-import ono.leo.erp.efd.pis_cofins.blocoF.RegistroF990;
-import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM001;
 import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM100;
 import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM105;
-import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM200;
 import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM500;
 import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM505;
-import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM600;
-import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM990;
 
 /**
- * Gera um arquivo EFD-PIS/Cofins de exemplo que pelo menos
+ * Gera um arquivo EFD-PIS/Cofins de exemplo simples que pelo menos
  * passa no validador PVA versao 1.0.0 Beta.
  * 
  * @author Leonardo Ono (ono.leo@gmail.com)
@@ -44,56 +23,25 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        GeradorDoArquivoEfdPisCofins gerador 
+        GeradorDoArquivoEfdPisCofins geradorDoArquivo 
                 = new GeradorDoArquivoEfdPisCofins();
         
-        gerador.addRegistro(new Registro0000());
-        gerador.addRegistro(new Registro0001());
-        gerador.addRegistro(new Registro0110());
-        gerador.addRegistro(new Registro0140());
-
-        gerador.addRegistro(criarClienteTeste()); // Registro0150 Cliente
-        gerador.addRegistro(criarFornecedorTeste()); // Registro0150 Fornecedor
-        gerador.addRegistro(criarUnidadeTeste()); // Registro0190 Unidade
-        gerador.addRegistro(criarProdutoTeste()); // Registro0200 Produto
-        gerador.addRegistro(criarCfopTeste()); // Registro0400 CFOP
+        geradorDoArquivo.addRegistro(criarClienteTeste()); // Registro0150 Cliente
+        geradorDoArquivo.addRegistro(criarFornecedorTeste()); // Registro0150 Fornecedor
+        geradorDoArquivo.addRegistro(criarUnidadeTeste()); // Registro0190 Unidade
+        geradorDoArquivo.addRegistro(criarProdutoTeste()); // Registro0200 Produto
+        geradorDoArquivo.addRegistro(criarCfopTeste()); // Registro0400 CFOP
         
-        gerador.addRegistro(new Registro0990());
-
-        gerador.addRegistro(new RegistroA001());
-        gerador.addRegistro(new RegistroA990());
+        geradorDoArquivo.addRegistro(new RegistroC010()); // Identificacao do estabelecimento
+        geradorDoArquivo.addRegistro(new RegistroC100()); // Cabecalho da NFe
+        geradorDoArquivo.addRegistro(new RegistroC170()); // Item da NFe
         
-        gerador.addRegistro(new RegistroC001());
+        geradorDoArquivo.addRegistro(new RegistroM100()); // Credito de PIS/PASEP relativo ao periodo.
+        geradorDoArquivo.addRegistro(new RegistroM105()); // Detalhamento da base de calculo do credito apurado no periodo PIS/PASEP.
+        geradorDoArquivo.addRegistro(new RegistroM500()); // Credito de COFINS relativo ao periodo.
+        geradorDoArquivo.addRegistro(new RegistroM505()); // Detalhamento da base de calculo do credito apurado no periodo - Cofins.
         
-        gerador.addRegistro(new RegistroC010()); // Identificacao do estabelecimento
-        gerador.addRegistro(new RegistroC100()); // Cabecalho da NFe
-        gerador.addRegistro(new RegistroC170()); // Item da NFe
-        
-        gerador.addRegistro(new RegistroC990());
-
-        gerador.addRegistro(new RegistroD001());
-        gerador.addRegistro(new RegistroD990());
-        
-        gerador.addRegistro(new RegistroF001());
-        gerador.addRegistro(new RegistroF990());
-        
-        gerador.addRegistro(new RegistroM001());
-        
-        gerador.addRegistro(new RegistroM100()); // Credito de PIS/PASEP relativo ao periodo.
-        gerador.addRegistro(new RegistroM105()); // Detalhamento da base de calculo do credito apurado no periodo PIS/PASEP.
-        gerador.addRegistro(new RegistroM200());
-        gerador.addRegistro(new RegistroM500()); // Credito de COFINS relativo ao periodo.
-        gerador.addRegistro(new RegistroM505()); // Detalhamento da base de calculo do credito apurado no periodo - Cofins.
-        gerador.addRegistro(new RegistroM600());
-        gerador.addRegistro(new RegistroM990());
-        
-        gerador.addRegistro(new Registro1001());
-        gerador.addRegistro(new Registro1990());
-
-        gerador.addRegistro(new Registro9001());
-        gerador.addRegistro(new Registro9990());
-        
-        gerador.gerar("c:/teste_efd_pis_cofins.txt");
+        geradorDoArquivo.gerar("c:/teste_efd_pis_cofins.txt");
 
     }
 

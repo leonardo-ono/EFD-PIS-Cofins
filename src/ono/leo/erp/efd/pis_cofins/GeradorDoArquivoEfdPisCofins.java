@@ -10,6 +10,27 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import ono.leo.erp.efd.pis_cofins.bloco0.Registro0000;
+import ono.leo.erp.efd.pis_cofins.bloco0.Registro0001;
+import ono.leo.erp.efd.pis_cofins.bloco0.Registro0110;
+import ono.leo.erp.efd.pis_cofins.bloco0.Registro0140;
+import ono.leo.erp.efd.pis_cofins.bloco0.Registro0990;
+import ono.leo.erp.efd.pis_cofins.bloco1.Registro1001;
+import ono.leo.erp.efd.pis_cofins.bloco1.Registro1990;
+import ono.leo.erp.efd.pis_cofins.bloco9.Registro9001;
+import ono.leo.erp.efd.pis_cofins.bloco9.Registro9990;
+import ono.leo.erp.efd.pis_cofins.blocoA.RegistroA001;
+import ono.leo.erp.efd.pis_cofins.blocoA.RegistroA990;
+import ono.leo.erp.efd.pis_cofins.blocoC.RegistroC001;
+import ono.leo.erp.efd.pis_cofins.blocoC.RegistroC990;
+import ono.leo.erp.efd.pis_cofins.blocoD.RegistroD001;
+import ono.leo.erp.efd.pis_cofins.blocoD.RegistroD990;
+import ono.leo.erp.efd.pis_cofins.blocoF.RegistroF001;
+import ono.leo.erp.efd.pis_cofins.blocoF.RegistroF990;
+import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM001;
+import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM200;
+import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM600;
+import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM990;
 
 /**
  * Gerador de arquivo EFD-PIS/COFINS.
@@ -31,17 +52,50 @@ public class GeradorDoArquivoEfdPisCofins {
     private Integer quantidadeTotalDeRegistros = 0;
     
     public GeradorDoArquivoEfdPisCofins() {
+        adicionarTodosRegistrosObrigatorios();
+    }
+    
+    private void adicionarTodosRegistrosObrigatorios() {
+        // Bloco 0
+        addRegistroInterno(new Registro0000());
+        addRegistroInterno(new Registro0001());
+        addRegistroInterno(new Registro0110());
+        addRegistroInterno(new Registro0140());
+        addRegistroInterno(new Registro0990());
+        // Bloco A
+        addRegistroInterno(new RegistroA001());
+        addRegistroInterno(new RegistroA990());
+        // Bloco C
+        addRegistroInterno(new RegistroC001());
+        addRegistroInterno(new RegistroC990());
+        // Bloco D
+        addRegistroInterno(new RegistroD001());
+        addRegistroInterno(new RegistroD990());
+        // Bloco F
+        addRegistroInterno(new RegistroF001());
+        addRegistroInterno(new RegistroF990());
+        // Bloco M
+        addRegistroInterno(new RegistroM001());
+        addRegistroInterno(new RegistroM200());
+        // TODO Registro M210 e obrigatorio ?
+        addRegistroInterno(new RegistroM600());
+        // TODO Registro M610 e obrigatorio ?
+        addRegistroInterno(new RegistroM990());
+        // Bloco 1
+        addRegistroInterno(new Registro1001());
+        addRegistroInterno(new Registro1990());
+        // Bloco 9
+        addRegistroInterno(new Registro9001());
+        addRegistroInterno(new Registro9990());        
         addRegistroInterno(registro9999);
     }
     
     public void addRegistro(Registro registro) {
-        if (registro instanceof Registro9900 
-         || registro instanceof Registro9999) {
-             
+        if (registro.getObrigatoriedade() == Registro.Obrigatoriedade.O) {
             throw new RuntimeException("Nao e permitido adicionar "
-                + "Registro9900 e Registro9999 ! "
+                + "registros obrigatórios ! "
                 + "Esses registros serao criados e inseridos "
-                + "automaticamente pelo sistema na hora de gerar o arquivo !");
+                + "automaticamente na hora de gerar o arquivo !");
         }
         addRegistroInterno(registro);
     }
