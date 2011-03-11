@@ -17,7 +17,7 @@ public class RegistroC001 extends Registro {
      * <p><strong>0</strong> - Bloco com dados informados.</p>
      * <p><strong>1</strong> - Bloco sem dados informados.</p>
      */ 
-    private String IND_MOV = "1";
+    private String IND_MOV = "0";
 
     public RegistroC001() {
         super();

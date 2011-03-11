@@ -16,19 +16,26 @@ import ono.leo.erp.efd.pis_cofins.bloco9.Registro9990;
 import ono.leo.erp.efd.pis_cofins.blocoA.RegistroA001;
 import ono.leo.erp.efd.pis_cofins.blocoA.RegistroA990;
 import ono.leo.erp.efd.pis_cofins.blocoC.RegistroC001;
+import ono.leo.erp.efd.pis_cofins.blocoC.RegistroC010;
+import ono.leo.erp.efd.pis_cofins.blocoC.RegistroC100;
+import ono.leo.erp.efd.pis_cofins.blocoC.RegistroC170;
 import ono.leo.erp.efd.pis_cofins.blocoC.RegistroC990;
 import ono.leo.erp.efd.pis_cofins.blocoD.RegistroD001;
 import ono.leo.erp.efd.pis_cofins.blocoD.RegistroD990;
 import ono.leo.erp.efd.pis_cofins.blocoF.RegistroF001;
 import ono.leo.erp.efd.pis_cofins.blocoF.RegistroF990;
 import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM001;
+import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM100;
+import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM105;
 import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM200;
+import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM500;
+import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM505;
 import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM600;
 import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM990;
 
 /**
- * Gera o arquivo EFD-PIS/Cofins com a minima estrutura necessaria
- * para passar no validador versao 1.0.0 Beta.
+ * Gera um arquivo EFD-PIS/Cofins de exemplo que pelo menos
+ * passa no validador PVA versao 1.0.0 Beta.
  * 
  * @author Leonardo Ono (ono.leo@gmail.com)
  * @since 1.00.00 (10/03/2011 12:56)
@@ -57,6 +64,11 @@ public class Main {
         gerador.addRegistro(new RegistroA990());
         
         gerador.addRegistro(new RegistroC001());
+        
+        gerador.addRegistro(new RegistroC010()); // Identificacao do estabelecimento
+        gerador.addRegistro(new RegistroC100()); // Cabecalho da NFe
+        gerador.addRegistro(new RegistroC170()); // Item da NFe
+        
         gerador.addRegistro(new RegistroC990());
 
         gerador.addRegistro(new RegistroD001());
@@ -66,7 +78,12 @@ public class Main {
         gerador.addRegistro(new RegistroF990());
         
         gerador.addRegistro(new RegistroM001());
+        
+        gerador.addRegistro(new RegistroM100()); // Credito de PIS/PASEP relativo ao periodo.
+        gerador.addRegistro(new RegistroM105()); // Detalhamento da base de calculo do credito apurado no periodo PIS/PASEP.
         gerador.addRegistro(new RegistroM200());
+        gerador.addRegistro(new RegistroM500()); // Credito de COFINS relativo ao periodo.
+        gerador.addRegistro(new RegistroM505()); // Detalhamento da base de calculo do credito apurado no periodo - Cofins.
         gerador.addRegistro(new RegistroM600());
         gerador.addRegistro(new RegistroM990());
         

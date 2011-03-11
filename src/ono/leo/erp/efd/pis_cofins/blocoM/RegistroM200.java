@@ -13,17 +13,17 @@ import ono.leo.erp.efd.pis_cofins.Registro.Obrigatoriedade;
 public class RegistroM200 extends Registro {
 
     private String ER = "0";
-    private String VL_TOT_CRED_DESC = "0,00";
+    private String VL_TOT_CRED_DESC = "0";
     private String VL_TOT_CRED_DESC_ANT = "0";
-    private String VL_TOT_CONT_NC_DEV = "0,00";
+    private String VL_TOT_CONT_NC_DEV = "0";
     private String VL_RET_NC = "0";
     private String VL_OUT_DED_NC = "0";
-    private String VL_CONT_NC_REC = "0,00";
+    private String VL_CONT_NC_REC = "0";
     private String VL_TOT_CONT_CUM_PER = "0";
     private String VL_RET_CUM = "0";
     private String VL_OUT_DED_CUM = "0";
     private String VL_CONT_CUM_REC = "0";
-    private String VL_TOT_CONT_REC = "0,00";
+    private String VL_TOT_CONT_REC = "0";
 
     public RegistroM200() {
         super();
