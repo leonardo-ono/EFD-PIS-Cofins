@@ -1,5 +1,7 @@
 package ono.leo.erp.efd.pis_cofins;
 
+import javax.swing.JOptionPane;
+import ono.leo.erp.efd.pis_cofins.bloco0.Registro0100;
 import ono.leo.erp.efd.pis_cofins.bloco0.Registro0150;
 import ono.leo.erp.efd.pis_cofins.bloco0.Registro0190;
 import ono.leo.erp.efd.pis_cofins.bloco0.Registro0200;
@@ -21,11 +23,12 @@ import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM505;
  */
 public class Main {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
         GeradorDoArquivoEfdPisCofins geradorDoArquivo 
                 = new GeradorDoArquivoEfdPisCofins();
         
+        geradorDoArquivo.addRegistro(new Registro0100()); // Dados do contabilista
         geradorDoArquivo.addRegistro(criarClienteTeste()); // Registro0150 Cliente
         geradorDoArquivo.addRegistro(criarFornecedorTeste()); // Registro0150 Fornecedor
         geradorDoArquivo.addRegistro(criarUnidadeTeste()); // Registro0190 Unidade
@@ -41,7 +44,19 @@ public class Main {
         geradorDoArquivo.addRegistro(new RegistroM500()); // Credito de COFINS relativo ao periodo.
         geradorDoArquivo.addRegistro(new RegistroM505()); // Detalhamento da base de calculo do credito apurado no periodo - Cofins.
         
-        geradorDoArquivo.gerar("c:/teste_efd_pis_cofins.txt");
+        String caminho = "c:/teste_efd_pis_cofins.txt";
+        
+        caminho = JOptionPane.showInputDialog(
+                "Informe o caminho em que o arquivo será gerado:", caminho);
+        
+        try {
+            geradorDoArquivo.gerar(caminho);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null
+                    , "Ocorreu um erro ao tentar gerar arquivo ! \n\n"
+                    + "Verifique o caminho informado e tente novamente."
+                    , ":: Erro", JOptionPane.ERROR_MESSAGE );
+        }
 
     }
 
