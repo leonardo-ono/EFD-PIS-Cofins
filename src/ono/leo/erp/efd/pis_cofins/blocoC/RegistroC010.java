@@ -20,6 +20,22 @@ public class RegistroC010 extends Registro {
         REG = "C010";
         obrigatoriedade = Obrigatoriedade.O_SE;
     }
+
+    public String getCNPJ() {
+        return CNPJ;
+    }
+
+    public void setCNPJ(String CNPJ) {
+        this.CNPJ = CNPJ;
+    }
+
+    public String getIND_ESCRI() {
+        return IND_ESCRI;
+    }
+
+    public void setIND_ESCRI(String IND_ESCRI) {
+        this.IND_ESCRI = IND_ESCRI;
+    }
     
     @Override
     public String gerarLinha() {
