@@ -5,7 +5,7 @@ import ono.leo.erp.efd.pis_cofins.Registro.Obrigatoriedade;
 
 /**
  * Registro C199. 
- * Processo referenciado.
+ * Complemento do documento - operacoes de importacao (codigos 55).
  * 
  * @author Leonardo Ono (ono.leo@gmail.com)
  * @since 1.00.00 (14/03/2011 11:44)
