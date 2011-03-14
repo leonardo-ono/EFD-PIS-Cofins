@@ -5,7 +5,7 @@ import ono.leo.erp.efd.pis_cofins.Registro.Obrigatoriedade;
 
 /**
  * Registro C385.
- * Detalhamento da consolidacao - PIS/PASEP.
+ * Detalhamento da consolidacao - Cofins.
  * 
  * @author Leonardo Ono (ono.leo@gmail.com)
  * @since 1.00.00 (14/03/2011 11:55)
