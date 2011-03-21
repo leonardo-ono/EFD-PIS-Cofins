@@ -1,7 +1,7 @@
 package ono.leo.erp.efd.pis_cofins.blocoD;
 
+import ono.leo.erp.efd.pis_cofins.Registro;
 import ono.leo.erp.efd.pis_cofins.Registro.Obrigatoriedade;
-import ono.leo.erp.efd.pis_cofins.RegistroX001;
 
 /**
  * Registro D100. 
@@ -15,7 +15,7 @@ import ono.leo.erp.efd.pis_cofins.RegistroX001;
  * @author Leonardo Ono (ono.leo@gmail.com)
  * @since 1.00.00 (21/03/2011 10:11)
  */
-public class RegistroD100 extends RegistroX001 {
+public class RegistroD100 extends Registro {
     
     private String IND_OPER = "";
     private String IND_EMIT = "";
