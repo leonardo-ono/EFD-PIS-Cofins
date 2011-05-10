@@ -37,6 +37,7 @@ public class Registro1101 extends Registro {
     
     public Registro1101() {
         REG = "1101";
+        REG_PAI = "1100";
         nivel = 3;
         obrigatoriedade = Obrigatoriedade.O_SE; // se VL_CRED_EXT_APU do 
                                                 // registro 1100 > 0

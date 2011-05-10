@@ -14,7 +14,8 @@ public class Registro9001 extends RegistroX001 {
     
     public Registro9001() {
         REG = "9001";
-        nivel = 0;
+        REG_PAI = "0000";
+        nivel = 1;
         obrigatoriedade = Obrigatoriedade.O;
     }
     

@@ -16,6 +16,7 @@ import ono.leo.erp.efd.pis_cofins.Registro.Obrigatoriedade;
 
     public Registro0450() {
         REG = "0450";
+        REG_PAI = "0140";
         nivel = 3;
         obrigatoriedade = Obrigatoriedade.OC;
     }

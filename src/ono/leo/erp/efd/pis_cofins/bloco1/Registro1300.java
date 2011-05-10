@@ -22,6 +22,7 @@ public class Registro1300 extends Registro {
     
     public Registro1300() {
         REG = "1300";
+        REG_PAI = "1001";
         nivel = 2;
         obrigatoriedade = Obrigatoriedade.OC;
     }

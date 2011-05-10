@@ -14,6 +14,7 @@ public class RegistroM990 extends RegistroX990 {
     
     public RegistroM990() {
         REG = "M990";
+        REG_PAI = "0000";
         nivel = 1;
         obrigatoriedade = Obrigatoriedade.O;
     }

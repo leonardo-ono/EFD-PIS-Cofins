@@ -28,6 +28,7 @@ public class RegistroM600 extends Registro {
     public RegistroM600() {
         super();
         REG = "M600";
+        REG_PAI = "M001";
         nivel = 2;
         obrigatoriedade = Obrigatoriedade.O;
     }

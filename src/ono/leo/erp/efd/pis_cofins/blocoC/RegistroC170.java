@@ -52,6 +52,7 @@ public class RegistroC170 extends Registro {
     public RegistroC170() {
         super();
         REG = "C170";
+        REG_PAI = "C100";
         nivel = 4;
         obrigatoriedade = Obrigatoriedade.O_SE;
     }

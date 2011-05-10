@@ -19,6 +19,7 @@ public class Registro1102 extends Registro {
     
     public Registro1102() {
         REG = "1102";
+        REG_PAI = "1101";
         nivel = 4;
         obrigatoriedade = Obrigatoriedade.O_SE; // se CST_PIS do registro 1101
                                                 // for igual a 53, 54, 55, 56,

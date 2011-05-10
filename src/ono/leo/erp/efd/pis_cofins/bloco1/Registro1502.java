@@ -19,6 +19,7 @@ public class Registro1502 extends Registro {
     
     public Registro1502() {
         REG = "1502";
+        REG_PAI = "1501";
         nivel = 4;
         obrigatoriedade = Obrigatoriedade.O_SE; // se CST_COFINS do 
                                                 // registro 1501 for igual a 53,

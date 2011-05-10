@@ -24,6 +24,7 @@ public class RegistroM410 extends Registro {
     
     public RegistroM410() {
         REG = "M410";
+        REG_PAI = "M400";
         nivel = 3;
         obrigatoriedade = Obrigatoriedade.O_SE; // se existir M400
     }

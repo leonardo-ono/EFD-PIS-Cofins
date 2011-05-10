@@ -33,6 +33,7 @@ public class RegistroF120 extends Registro {
     
     public RegistroF120() {
         REG = "F120";
+        REG_PAI = "F010";
         nivel = 3;
         obrigatoriedade = Obrigatoriedade.OC;
     }

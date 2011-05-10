@@ -17,6 +17,7 @@ public class RegistroD209 extends Registro {
     
     public RegistroD209() {
         REG = "D209";
+        REG_PAI = "D200";
         nivel = 4;
         obrigatoriedade = Obrigatoriedade.OC;
     }

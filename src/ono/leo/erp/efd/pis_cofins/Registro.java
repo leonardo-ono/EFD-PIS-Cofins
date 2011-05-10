@@ -1,5 +1,8 @@
 package ono.leo.erp.efd.pis_cofins;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public abstract class Registro implements Comparable<Registro> {
 
@@ -32,6 +35,13 @@ public abstract class Registro implements Comparable<Registro> {
     protected int nivel = 0;
     
     protected String REG = "0000";
+    
+    /**
+     * <p>Indica o nome do registro pai.</p>
+     */
+    protected String REG_PAI = null;
+    
+    protected List<Registro> registrosFilhos = new ArrayList<Registro>();
 
     public Obrigatoriedade getObrigatoriedade() {
         return obrigatoriedade;
@@ -48,6 +58,10 @@ public abstract class Registro implements Comparable<Registro> {
     public String getREG() {
         return REG;
     }
+    
+    public String getREG_PAI() {
+        return REG_PAI;
+    }
 
     public String getBloco() {
         String bloco = "";
@@ -58,6 +72,15 @@ public abstract class Registro implements Comparable<Registro> {
     }
     
     public abstract String gerarLinha();
+    
+    public void addRegistroFilho(Registro registro) {
+        if (!REG.equals(registro.getREG_PAI())) 
+            throw new RuntimeException("Registro filho invalido !");
+        
+        if (registro == null) return;
+        if (registrosFilhos.contains(registro)) return;
+        registrosFilhos.add(registro);
+    }
 
     @Override
     public int compareTo(Registro o) {
@@ -82,12 +105,6 @@ public abstract class Registro implements Comparable<Registro> {
         if (linha2.startsWith("|9")) linha2 = "7" + linha2;
         
         int r = linha1.compareTo(linha2);
-        
-        //System.out.println("-----------------------------------");
-        //System.out.println("LINHA1=" + linha1);
-        //System.out.println("LINHA2=" + linha2);
-        //System.out.println("R=" + r);
-        
         return r;
     }
     
