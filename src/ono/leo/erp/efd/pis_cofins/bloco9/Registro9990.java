@@ -14,6 +14,7 @@ public class Registro9990 extends RegistroX990 {
     
     public Registro9990() {
         REG = "9990";
+        nivel = 0;
         obrigatoriedade = Obrigatoriedade.O;
     }
     

@@ -24,6 +24,7 @@ public class RegistroD605 extends Registro {
     
     public RegistroD605() {
         REG = "D605";
+        nivel = 4;
         obrigatoriedade = Obrigatoriedade.OC;
     }
 

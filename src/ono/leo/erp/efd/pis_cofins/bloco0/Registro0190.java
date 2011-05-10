@@ -16,6 +16,7 @@ public class Registro0190 extends Registro {
     
     public Registro0190() {
         REG = "0190";
+        nivel = 3;
         obrigatoriedade = Obrigatoriedade.OC;
     }
 

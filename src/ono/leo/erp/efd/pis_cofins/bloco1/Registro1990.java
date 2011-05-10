@@ -14,6 +14,7 @@ public class Registro1990 extends RegistroX990 {
     
     public Registro1990() {
         REG = "1990";
+        nivel = 1;
         obrigatoriedade = Obrigatoriedade.O;
     }
     

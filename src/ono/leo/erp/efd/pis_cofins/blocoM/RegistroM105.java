@@ -23,8 +23,8 @@ public class RegistroM105 extends Registro {
     private String DESC_CRED = "";
 
     public RegistroM105() {
-        super();
         REG = "M105";
+        nivel = 3;
         obrigatoriedade = Obrigatoriedade.OC;
     }
 

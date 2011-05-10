@@ -25,6 +25,7 @@ public class Registro1600 extends Registro {
     
     public Registro1600() {
         REG = "1600";
+        nivel = 2;
         obrigatoriedade = Obrigatoriedade.OC;
     }
 

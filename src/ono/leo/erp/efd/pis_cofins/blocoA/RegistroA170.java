@@ -32,6 +32,7 @@ public class RegistroA170 extends Registro {
     
     public RegistroA170() {
         REG = "A170";
+        nivel = 4;
         obrigatoriedade = Obrigatoriedade.OC;
     }
 

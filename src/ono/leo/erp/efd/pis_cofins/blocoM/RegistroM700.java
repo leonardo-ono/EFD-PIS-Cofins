@@ -21,6 +21,7 @@ public class RegistroM700 extends Registro {
     
     public RegistroM700() {
         REG = "M700";
+        nivel = 2;
         obrigatoriedade = Obrigatoriedade.OC;
     }
 

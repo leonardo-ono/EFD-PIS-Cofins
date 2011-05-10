@@ -20,6 +20,7 @@ public class RegistroM611 extends Registro {
     
     public RegistroM611() {
         REG = "M611";
+        nivel = 4;
         obrigatoriedade = Obrigatoriedade.O_SE; // se IND_NAT_PJ do registro 
                                                 // 0000 for igual a 01
     }

@@ -20,6 +20,7 @@ public class RegistroM211 extends Registro {
     
     public RegistroM211() {
         REG = "M211";
+        nivel = 4;
         obrigatoriedade = Obrigatoriedade.O_SE;
     }
 

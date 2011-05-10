@@ -21,6 +21,7 @@ public class RegistroM230 extends Registro {
     
     public RegistroM230() {
         REG = "M230";
+        nivel = 4;
         obrigatoriedade = Obrigatoriedade.OC;
     }
 

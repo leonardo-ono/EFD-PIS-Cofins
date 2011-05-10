@@ -28,8 +28,8 @@ public class RegistroM100 extends Registro {
     private String SLD_CRED = "2,61";
 
     public RegistroM100() {
-        super();
         REG = "M100";
+        nivel = 2;
         obrigatoriedade = Obrigatoriedade.OC;
     }
 

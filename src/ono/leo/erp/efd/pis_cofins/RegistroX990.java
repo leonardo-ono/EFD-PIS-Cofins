@@ -13,6 +13,10 @@ public abstract class RegistroX990 extends Registro {
 
     protected String QTD_LIN = "0";
 
+    public RegistroX990() {
+        nivel = 1;
+    }
+
     public String getQTD_LIN() {
         return QTD_LIN;
     }

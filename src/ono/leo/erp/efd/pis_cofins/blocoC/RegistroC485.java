@@ -24,6 +24,7 @@ public class RegistroC485 extends Registro {
  
     public RegistroC485() {
         REG = "C485";
+        nivel = 5;
         obrigatoriedade = Obrigatoriedade.OC;
     }
 

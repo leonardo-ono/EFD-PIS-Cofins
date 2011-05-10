@@ -31,6 +31,7 @@ public class RegistroM210 extends Registro {
     
     public RegistroM210() {
         REG = "M210";
+        nivel = 3;
         obrigatoriedade = Obrigatoriedade.OC; // no layout esta como obrigatorio
     }
 

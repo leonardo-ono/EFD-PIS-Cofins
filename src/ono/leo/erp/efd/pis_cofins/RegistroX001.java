@@ -18,6 +18,10 @@ public abstract class RegistroX001 extends Registro {
      */ 
     protected String IND_MOV = "1";
 
+    public RegistroX001() {
+        nivel = 1;
+    }
+
     public String getIND_MOV() {
         return IND_MOV;
     }

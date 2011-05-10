@@ -18,6 +18,7 @@ public class Registro9900 extends Registro {
     public Registro9900(String REG_BLC) {
         super();
         REG = "9900";
+        nivel = 0;
         obrigatoriedade = Obrigatoriedade.O;
         this.REG_BLC = REG_BLC;
     }

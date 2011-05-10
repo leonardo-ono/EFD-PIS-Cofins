@@ -17,6 +17,7 @@ public class RegistroF129 extends Registro {
     
     public RegistroF129() {
         REG = "F129";
+        nivel = 4;
         obrigatoriedade = Obrigatoriedade.OC;
     }
 

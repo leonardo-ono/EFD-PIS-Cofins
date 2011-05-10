@@ -23,6 +23,7 @@ public class RegistroM810 extends Registro {
     
     public RegistroM810() {
         REG = "M810";
+        nivel = 3;
         obrigatoriedade = Obrigatoriedade.O_SE; // se existir M800
     }
 

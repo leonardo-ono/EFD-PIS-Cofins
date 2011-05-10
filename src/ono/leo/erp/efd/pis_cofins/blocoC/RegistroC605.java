@@ -22,6 +22,7 @@ public class RegistroC605 extends Registro {
  
     public RegistroC605() {
         REG = "C605";
+        nivel = 4;
         obrigatoriedade = Obrigatoriedade.O_SE;
     }
 

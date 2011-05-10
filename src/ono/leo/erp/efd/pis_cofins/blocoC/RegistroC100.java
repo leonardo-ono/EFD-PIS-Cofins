@@ -45,6 +45,7 @@ public class RegistroC100 extends Registro {
     public RegistroC100() {
         super();
         REG = "C100";
+        nivel = 3;
         obrigatoriedade = Obrigatoriedade.O_SE;
     }
 
