@@ -44,7 +44,8 @@ public class Registro1809 extends Registro {
         linha += "|" + REG;
         linha += "|" + NUM_PROC;
         linha += "|" + IND_PROC;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

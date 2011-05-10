@@ -114,7 +114,8 @@ public class RegistroM105 extends Registro {
         linha += "|" + QUANT_BC_PIS_TOT;
         linha += "|" + QUANT_BC_PIS;
         linha += "|" + DESC_CRED;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
     

@@ -236,7 +236,8 @@ public class Registro1501 extends Registro {
         linha += "|" + DESC_COMPL;
         linha += "|" + PER_ESCRIT;
         linha += "|" + CNPJ;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

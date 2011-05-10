@@ -64,7 +64,8 @@ public class Registro0205 extends Registro {
         linha += "|" + DT_INI;
         linha += "|" + DT_FIM;
         linha += "|" + COD_ANT_ITEM;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
     

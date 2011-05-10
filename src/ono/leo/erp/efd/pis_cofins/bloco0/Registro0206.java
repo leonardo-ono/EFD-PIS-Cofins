@@ -34,7 +34,8 @@ public class Registro0206 extends Registro {
         String linha = "";
         linha += "|" + REG;
         linha += "|" + COD_COMB;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
     

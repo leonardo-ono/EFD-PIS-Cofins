@@ -84,7 +84,8 @@ public class RegistroM630 extends Registro {
         linha += "|" + VL_CONT_DIF;
         linha += "|" + VL_CRED_DIF;
         linha += "|" + COD_CRED;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

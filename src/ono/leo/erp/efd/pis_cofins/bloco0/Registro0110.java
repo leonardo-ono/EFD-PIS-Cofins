@@ -54,7 +54,8 @@ public class Registro0110 extends Registro {
         linha += "|" + COD_INC_TRIB;
         linha += "|" + IND_APRO_CRED;
         linha += "|" + COD_TIPO_CONT;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

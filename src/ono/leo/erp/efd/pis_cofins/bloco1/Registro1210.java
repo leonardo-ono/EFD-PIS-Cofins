@@ -124,7 +124,8 @@ public class Registro1210 extends Registro {
         linha += "|" + VL_PIS;
         linha += "|" + COD_CTA;
         linha += "|" + DESC_COMPL;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

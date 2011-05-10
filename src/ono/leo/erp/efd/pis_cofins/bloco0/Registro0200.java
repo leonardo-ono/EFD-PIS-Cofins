@@ -133,7 +133,8 @@ public class Registro0200 extends Registro {
         linha += "|" + COD_GEN;
         linha += "|" + COD_LST;
         linha += "|" + ALIQ_ICMS;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
     

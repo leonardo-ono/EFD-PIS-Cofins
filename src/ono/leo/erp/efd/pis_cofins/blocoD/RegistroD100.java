@@ -249,7 +249,8 @@ public class RegistroD100 extends Registro {
         linha += "|" + VL_NT;
         linha += "|" + COD_INF;
         linha += "|" + COD_CTA;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

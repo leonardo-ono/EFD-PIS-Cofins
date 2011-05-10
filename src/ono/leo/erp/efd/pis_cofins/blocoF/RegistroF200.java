@@ -234,7 +234,8 @@ public class RegistroF200 extends Registro {
         linha += "|" + PERC_REC_RECEB;
         linha += "|" + IND_NAT_EMP;
         linha += "|" + INF_COMP;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

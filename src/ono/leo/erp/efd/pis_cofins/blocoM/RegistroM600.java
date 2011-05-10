@@ -145,7 +145,8 @@ public class RegistroM600 extends Registro {
         linha += "|" + VL_OUT_DED_CUM;
         linha += "|" + VL_CONT_CUM_REC;
         linha += "|" + VL_TOT_CONT_REC;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
     

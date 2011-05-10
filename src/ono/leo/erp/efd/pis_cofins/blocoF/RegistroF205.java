@@ -201,7 +201,8 @@ public class RegistroF205 extends Registro {
         linha += "|" + VL_CRED_COFINS_DESC_ANT;
         linha += "|" + VL_CRED_COFINS_DESC;
         linha += "|" + VL_CRED_COFINS_DESC_FUT;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

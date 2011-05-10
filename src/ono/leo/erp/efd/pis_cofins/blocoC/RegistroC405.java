@@ -84,7 +84,8 @@ public class RegistroC405 extends Registro {
         linha += "|" + NUM_COO_FIN;
         linha += "|" + GT_FIN;
         linha += "|" + VL_BRT;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

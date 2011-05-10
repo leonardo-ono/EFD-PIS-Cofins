@@ -143,7 +143,8 @@ public class Registro0150 extends Registro {
         linha += "|" + NUM;
         linha += "|" + COMPL;
         linha += "|" + BAIRRO;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

@@ -85,7 +85,8 @@ public class RegistroM300 extends Registro {
         linha += "|" + VL_CRED_DESC;
         linha += "|" + PER_APUR;
         linha += "|" + DT_RECEB;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

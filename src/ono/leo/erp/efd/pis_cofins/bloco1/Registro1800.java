@@ -104,7 +104,8 @@ public class Registro1800 extends Registro {
         linha += "|" + VL_REC_UNI;
         linha += "|" + DT_REC_UNI;
         linha += "|" + COD_REC;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

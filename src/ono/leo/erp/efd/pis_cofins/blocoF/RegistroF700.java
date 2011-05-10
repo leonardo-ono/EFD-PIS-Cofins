@@ -64,7 +64,8 @@ public class RegistroF700 extends Registro {
         linha += "|" + IND_NAT_DED;
         linha += "|" + VL_DED_PIS;
         linha += "|" + VL_DED_COFINS;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

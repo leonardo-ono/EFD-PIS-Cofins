@@ -53,7 +53,8 @@ public class RegistroC490 extends Registro {
         linha += "|" + REG;
         linha += "|" + DT_DOC_INI;
         linha += "|" + COD_MOD;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

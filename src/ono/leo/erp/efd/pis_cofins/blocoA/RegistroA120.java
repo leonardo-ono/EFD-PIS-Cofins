@@ -104,7 +104,8 @@ public class RegistroA120 extends Registro {
         linha += "|" + VL_COFINS_IMP;
         linha += "|" + DT_PAG_COFINS;
         linha += "|" + LOC_EXE_SERV;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

@@ -79,7 +79,8 @@ public class RegistroC120 extends Registro {
         linha += "|" + PIS_IMP;
         linha += "|" + COFINS_IMP;
         linha += "|" + NUM_ACDRAW;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

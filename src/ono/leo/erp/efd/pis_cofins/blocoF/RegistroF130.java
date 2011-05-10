@@ -225,7 +225,8 @@ public class RegistroF130 extends Registro {
         linha += "|" + COD_CTA;
         linha += "|" + COD_CCUS;
         linha += "|" + DESC_BEM_IMOB;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

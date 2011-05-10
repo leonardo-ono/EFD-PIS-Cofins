@@ -57,7 +57,8 @@ public class Registro1102 extends Registro {
         linha += "|" + VL_CRED_PIS_TRIB_MI;
         linha += "|" + VL_CRED_PIS_NT_MI;
         linha += "|" + VL_CRED_PIS_EXP;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

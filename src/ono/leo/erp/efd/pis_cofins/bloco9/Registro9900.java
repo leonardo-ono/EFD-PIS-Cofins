@@ -52,7 +52,8 @@ public class Registro9900 extends Registro {
         linha += "|" + REG;
         linha += "|" + REG_BLC;
         linha += "|" + QTD_REG_BLC;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

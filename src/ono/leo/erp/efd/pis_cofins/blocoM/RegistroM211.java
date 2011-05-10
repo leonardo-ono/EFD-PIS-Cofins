@@ -74,7 +74,8 @@ public class RegistroM211 extends Registro {
         linha += "|" + VL_EXC_COOP_GER;
         linha += "|" + VL_EXC_ESP_COOP;
         linha += "|" + VL_BC_CONT;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

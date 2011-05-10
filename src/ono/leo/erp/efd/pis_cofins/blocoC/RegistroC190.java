@@ -96,7 +96,8 @@ public class RegistroC190 extends Registro {
         linha += "|" + COD_NCM;
         linha += "|" + EX_IPI;
         linha += "|" + VL_TOT_ITEM;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

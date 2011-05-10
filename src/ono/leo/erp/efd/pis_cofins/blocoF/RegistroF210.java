@@ -133,7 +133,8 @@ public class RegistroF210 extends Registro {
         linha += "|" + CST_COFINS;
         linha += "|" + ALIQ_COFINS;
         linha += "|" + VL_CRED_COFINS_UTIL;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

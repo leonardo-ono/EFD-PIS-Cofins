@@ -237,7 +237,8 @@ public class RegistroC600 extends Registro {
         linha += "|" + VL_ICMS_ST;
         linha += "|" + VL_PIS;
         linha += "|" + VL_COFINS;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

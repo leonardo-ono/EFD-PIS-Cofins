@@ -1,5 +1,6 @@
 package ono.leo.erp.efd.pis_cofins.bloco9;
 
+import java.util.Collections;
 import ono.leo.erp.efd.pis_cofins.Registro.Obrigatoriedade;
 import ono.leo.erp.efd.pis_cofins.RegistroX001;
 
@@ -24,7 +25,9 @@ public class Registro9001 extends RegistroX001 {
         String linha = "";
         linha += "|" + REG;
         linha += "|" + IND_MOV;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        Collections.sort(registrosFilhos);
+        linha += super.gerarLinha();
         return linha;
     }
 

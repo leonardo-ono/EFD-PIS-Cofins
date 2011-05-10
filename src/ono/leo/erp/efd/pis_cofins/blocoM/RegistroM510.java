@@ -84,7 +84,8 @@ public class RegistroM510 extends Registro {
         linha += "|" + NUM_DOC;
         linha += "|" + DESCR_AJ;
         linha += "|" + DT_REF;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

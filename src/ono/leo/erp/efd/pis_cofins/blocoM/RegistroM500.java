@@ -165,7 +165,8 @@ public class RegistroM500 extends Registro {
         linha += "|" + IND_DESC_CRED;
         linha += "|" + VL_CRED_DESC;
         linha += "|" + SLD_CRED;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
     

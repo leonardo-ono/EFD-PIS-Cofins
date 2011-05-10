@@ -1,9 +1,18 @@
 package ono.leo.erp.efd.pis_cofins;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import ono.leo.erp.efd.pis_cofins.bloco9.Registro9001;
+import ono.leo.erp.efd.pis_cofins.bloco9.Registro9900;
 
-
+/**
+* Classe abstrata para um Registro do layout EFD PIS/COFINS.
+*
+* @author Leonardo Ono (ono.leo@gmail.com)
+* @since 1.00.00 (03/03/2011 10:37)
+*/
 public abstract class Registro implements Comparable<Registro> {
 
     /**
@@ -41,6 +50,11 @@ public abstract class Registro implements Comparable<Registro> {
      */
     protected String REG_PAI = null;
     
+    private static Registro9001 registro9001 = new Registro9001();
+    
+    private static Map<String, Registro9900> registros9900
+            = new HashMap<String, Registro9900>();    
+    
     protected List<Registro> registrosFilhos = new ArrayList<Registro>();
 
     public Obrigatoriedade getObrigatoriedade() {
@@ -63,6 +77,10 @@ public abstract class Registro implements Comparable<Registro> {
         return REG_PAI;
     }
 
+    public static Registro9001 getRegistro9001() {
+        return registro9001;
+    }
+
     public String getBloco() {
         String bloco = "";
         if (REG.length() > 0) {
@@ -71,7 +89,13 @@ public abstract class Registro implements Comparable<Registro> {
         return bloco;
     }
     
-    public abstract String gerarLinha();
+    public String gerarLinha() {
+        StringBuilder sb = new StringBuilder();
+        for (Registro registro : registrosFilhos) {
+            sb.append(registro.gerarLinha());
+        }
+        return sb.toString();
+    }
     
     public void addRegistroFilho(Registro registro) {
         if (!REG.equals(registro.getREG_PAI())) 
@@ -79,9 +103,37 @@ public abstract class Registro implements Comparable<Registro> {
         
         if (registro == null) return;
         if (registrosFilhos.contains(registro)) return;
+        if (this instanceof RegistroX001 
+                && !(registro instanceof RegistroX001)
+                && !(registro instanceof RegistroX990)) {
+            
+            ((RegistroX001) this).setIND_MOV("0");
+        }
         registrosFilhos.add(registro);
+        criarOuObterRegistro9900eAtualizarQTD_REG_BLC(registro);
     }
 
+    public int getQuantidadeTotalDeRegistros() {
+        int quantidadeTotalDeRegistros = 1;
+        for (Registro registro : registrosFilhos) {
+            quantidadeTotalDeRegistros 
+                    += registro.getQuantidadeTotalDeRegistros();
+        }
+        return quantidadeTotalDeRegistros;
+    }
+    
+    private void criarOuObterRegistro9900eAtualizarQTD_REG_BLC(
+            Registro registro) {
+                
+        Registro9900 reg9900 = registros9900.get(registro.getREG());
+        if (reg9900 == null) {
+            reg9900 = new Registro9900(registro.getREG());
+            registros9900.put(registro.getREG(), reg9900);
+            registro9001.addRegistroFilho(reg9900);
+        }
+        reg9900.incrementarQTD_REG_BLC();
+    }
+    
     @Override
     public int compareTo(Registro o) {
         String linha1 = gerarLinha();

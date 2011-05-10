@@ -194,7 +194,8 @@ public class Registro1100 extends Registro {
         linha += "|" + VL_CRED_TRANS;
         linha += "|" + VL_CRED_OUT;
         linha += "|" + SLD_CRED_FIM;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

@@ -34,7 +34,8 @@ public class RegistroA010 extends Registro {
         String linha = "";
         linha += "|" + REG;
         linha += "|" + CNPJ;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

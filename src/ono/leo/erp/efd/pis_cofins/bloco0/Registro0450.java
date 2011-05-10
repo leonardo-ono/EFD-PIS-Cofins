@@ -43,7 +43,8 @@ import ono.leo.erp.efd.pis_cofins.Registro.Obrigatoriedade;
         linha += "|" + REG;
         linha += "|" + COD_INF;
         linha += "|" + TXT;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
     

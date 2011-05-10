@@ -54,7 +54,8 @@ public class Registro1020 extends Registro {
         linha += "|" + NUM_PROC;
         linha += "|" + IND_NAT_ACAO;
         linha += "|" + DT_DEC_ADM;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

@@ -64,7 +64,8 @@ public class RegistroC400 extends Registro {
         linha += "|" + ECF_MOD;
         linha += "|" + ECF_FAB;
         linha += "|" + ECF_CX;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

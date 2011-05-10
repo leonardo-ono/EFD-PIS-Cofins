@@ -119,7 +119,8 @@ public class RegistroD200 extends Registro {
         linha += "|" + DT_REF;
         linha += "|" + VL_DOC;
         linha += "|" + VL_DESC;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

@@ -103,7 +103,8 @@ public class Registro0140 extends Registro {
         linha += "|" + COD_MUN;
         linha += "|" + IM;
         linha += "|" + SUFRAMA;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

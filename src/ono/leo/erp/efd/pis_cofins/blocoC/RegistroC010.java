@@ -45,7 +45,8 @@ public class RegistroC010 extends Registro {
         linha += "|" + REG;
         linha += "|" + CNPJ;
         linha += "|" + IND_ESCRI;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

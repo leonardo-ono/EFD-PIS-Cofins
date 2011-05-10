@@ -148,7 +148,8 @@ public class RegistroM610 extends Registro {
         linha += "|" + VL_CONT_DIFER;
         linha += "|" + VL_CONT_DIFER_ANT;
         linha += "|" + VL_CONT_PER;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

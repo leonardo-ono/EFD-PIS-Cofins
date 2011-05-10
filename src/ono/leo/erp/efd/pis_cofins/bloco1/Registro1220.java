@@ -64,7 +64,8 @@ public class Registro1220 extends Registro {
         linha += "|" + ORIG_CRED;
         linha += "|" + COD_CRED;
         linha += "|" + VL_CRED;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

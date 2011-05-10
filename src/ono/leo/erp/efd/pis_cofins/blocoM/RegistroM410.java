@@ -70,7 +70,8 @@ public class RegistroM410 extends Registro {
         linha += "|" + COD_CTA;
         // Campo 5 nao existe ?
         linha += "|" + DESC_COMPL;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

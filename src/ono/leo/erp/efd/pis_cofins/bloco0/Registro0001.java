@@ -23,7 +23,8 @@ public class Registro0001 extends RegistroX001 {
         String linha = "";
         linha += "|" + REG;
         linha += "|" + IND_MOV;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

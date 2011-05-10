@@ -154,7 +154,8 @@ public class RegistroF150 extends Registro {
         linha += "|" + VL_CRED_COFINS;
         linha += "|" + DESC_EST;
         linha += "|" + COD_CTA;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

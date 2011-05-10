@@ -24,7 +24,8 @@ public class RegistroC990 extends RegistroX990 {
         String linha = "";
         linha += "|" + REG;
         linha += "|" + QTD_LIN;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

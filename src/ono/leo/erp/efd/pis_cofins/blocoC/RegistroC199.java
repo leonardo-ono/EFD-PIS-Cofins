@@ -74,7 +74,8 @@ public class RegistroC199 extends Registro {
         linha += "|" + VL_PIS_IMP;
         linha += "|" + VL_COFINS_IMP;
         linha += "|" + NUM_ACDRAW;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

@@ -54,7 +54,8 @@ public class Registro0600 extends Registro {
         linha += "|" + DT_ALT;
         linha += "|" + COD_CCUS;
         linha += "|" + CCUS;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
     

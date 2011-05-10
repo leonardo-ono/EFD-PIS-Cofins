@@ -104,7 +104,8 @@ public class Registro0500 extends Registro {
         linha += "|" + NOME_CTA;
         linha += "|" + COD_CTA_REF;
         linha += "|" + CNPJ_EST;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
     

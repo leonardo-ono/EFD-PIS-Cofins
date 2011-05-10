@@ -95,7 +95,8 @@ public class RegistroC395 extends Registro {
         linha += "|" + NUM_DOC;
         linha += "|" + DT_DOC;
         linha += "|" + VL_DOC;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

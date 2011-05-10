@@ -44,7 +44,8 @@ public class RegistroA110 extends Registro {
         linha += "|" + REG;
         linha += "|" + COD_INF;
         linha += "|" + TXT_COMPL;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

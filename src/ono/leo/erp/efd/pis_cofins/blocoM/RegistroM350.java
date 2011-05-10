@@ -74,7 +74,8 @@ public class RegistroM350 extends Registro {
         linha += "|" + VL_TOT_BC;
         linha += "|" + ALIQ_PIS_FOL;
         linha += "|" + VL_TOT_CONT_FOL;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

@@ -114,7 +114,8 @@ public class RegistroC381 extends Registro {
         linha += "|" + ALIQ_PIS_QUANT;
         linha += "|" + VL_PIS;
         linha += "|" + COD_CTA;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

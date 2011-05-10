@@ -224,7 +224,8 @@ public class RegistroA100 extends Registro {
         linha += "|" + VL_PIS_RET;
         linha += "|" + VL_COFINS_RET;
         linha += "|" + VL_ISS;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

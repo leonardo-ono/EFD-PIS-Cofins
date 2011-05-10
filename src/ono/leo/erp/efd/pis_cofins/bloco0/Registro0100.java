@@ -154,7 +154,8 @@ public class Registro0100 extends Registro {
         linha += "|" + FAX;
         linha += "|" + EMAIL;
         linha += "|" + COD_MUN;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

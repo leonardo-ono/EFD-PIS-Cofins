@@ -115,7 +115,8 @@ public class RegistroM505 extends Registro {
         linha += "|" + QUANT_BC_COFINS_TOT;
         linha += "|" + QUANT_BC_COFINS;
         linha += "|" + DESC_CRED;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
     

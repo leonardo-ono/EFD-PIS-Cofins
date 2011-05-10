@@ -114,7 +114,8 @@ public class RegistroF600 extends Registro {
         linha += "|" + CNPJ;
         linha += "|" + VL_RET_PIS;
         linha += "|" + VL_RET_COFINS;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

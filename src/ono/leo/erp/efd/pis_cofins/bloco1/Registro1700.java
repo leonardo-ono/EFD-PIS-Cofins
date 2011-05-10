@@ -94,7 +94,8 @@ public class Registro1700 extends Registro {
         linha += "|" + VL_RET_PER;
         linha += "|" + VL_RET_DCOMP;
         linha += "|" + SLD_RET;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

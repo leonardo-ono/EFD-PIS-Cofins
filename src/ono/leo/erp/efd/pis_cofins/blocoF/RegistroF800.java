@@ -94,7 +94,8 @@ public class RegistroF800 extends Registro {
         linha += "|" + COD_CRED;
         linha += "|" + VL_CRED;
         linha += "|" + PER_CRED_CIS;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

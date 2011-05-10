@@ -43,7 +43,8 @@ public class Registro0400 extends Registro {
         linha += "|" + REG;
         linha += "|" + COD_NAT;
         linha += "|" + DESCR_NAT;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
     

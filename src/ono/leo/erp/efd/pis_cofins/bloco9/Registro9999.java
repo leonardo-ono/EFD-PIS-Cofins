@@ -19,7 +19,7 @@ public class Registro9999 extends Registro {
 
     public Registro9999() {
         REG = "9999";
-        REG_PAI = null;
+        REG_PAI = "ROOT";
         nivel = 0;
         obrigatoriedade = Obrigatoriedade.O;
     }
@@ -37,7 +37,8 @@ public class Registro9999 extends Registro {
         String linha = "";
         linha += "|" + REG;
         linha += "|" + QTD_LIN;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

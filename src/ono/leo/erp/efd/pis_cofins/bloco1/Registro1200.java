@@ -124,7 +124,8 @@ public class Registro1200 extends Registro {
         linha += "|" + VL_MUL;
         linha += "|" + VL_JUR;
         linha += "|" + DT_RECOL;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

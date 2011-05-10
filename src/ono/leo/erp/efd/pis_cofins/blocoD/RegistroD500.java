@@ -236,7 +236,8 @@ public class RegistroD500 extends Registro {
         linha += "|" + COD_INF;
         linha += "|" + VL_PIS;
         linha += "|" + VL_COFINS;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 

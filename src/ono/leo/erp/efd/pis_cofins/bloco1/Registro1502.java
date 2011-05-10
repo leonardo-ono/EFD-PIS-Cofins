@@ -57,7 +57,8 @@ public class Registro1502 extends Registro {
         linha += "|" + VL_CRED_COFINS_TRIB_MI;
         linha += "|" + VL_CRED_COFINS_NT_MI;
         linha += "|" + VL_CRED_COFINS_EXP;
-        linha += "|";
+        linha += "|" + (char) 13 + (char) 10;
+        linha += super.gerarLinha();
         return linha;
     }
 
