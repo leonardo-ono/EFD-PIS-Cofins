@@ -1,11 +1,6 @@
 package ono.leo.erp.efd.pis_cofins;
 
-/**
- * Classe abstrata para um Registro do layout EFD PIS/COFINS.
- * 
- * @author Leonardo Ono (ono.leo@gmail.com)
- * @since 1.00.00 (03/03/2011 10:37)
- */
+
 public abstract class Registro implements Comparable<Registro> {
 
     /**
@@ -34,6 +29,8 @@ public abstract class Registro implements Comparable<Registro> {
     
     protected Obrigatoriedade obrigatoriedade;
     
+    protected int nivel = 0;
+    
     protected String REG = "0000";
 
     public Obrigatoriedade getObrigatoriedade() {
@@ -42,6 +39,10 @@ public abstract class Registro implements Comparable<Registro> {
 
     protected void setObrigatoriedade(Obrigatoriedade obrigatoriedade) {
         this.obrigatoriedade = obrigatoriedade;
+    }
+
+    public int getNivel() {
+        return nivel;
     }
 
     public String getREG() {
