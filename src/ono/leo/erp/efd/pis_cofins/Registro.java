@@ -39,9 +39,27 @@ public abstract class Registro implements Comparable<Registro> {
      */
     public static enum Obrigatoriedade { O, OC, O_SE, N }
     
+    /**
+     * <p>Indica a <strong>ocorrencia</strong> do Registro.</p>
+     * 
+     * <p><strong>UM</strong> = um por arquivo.</p>
+     * 
+     * <p><strong>VARIOS</strong> = varios por arquivo.</p>
+     * 
+     * <p><strong>UM_PARA_UM</strong> = devera haver um unico registro filho
+     *                                  para respectivo registro pai.</p>
+     * 
+     * <p><strong>UM_PARA_MUITOS</strong> = pode haver varios registros filhos
+     *                                      para respectivo registro pai.</p>
+     * 
+     */
+    public static enum Ocorrencia { UM, VARIOS, UM_PARA_UM, UM_PARA_MUITOS }
+    
     protected Obrigatoriedade obrigatoriedade;
     
     protected int nivel = 0;
+    
+    protected Ocorrencia ocorrencia;
     
     protected String REG = "0000";
     
@@ -69,6 +87,10 @@ public abstract class Registro implements Comparable<Registro> {
         return nivel;
     }
 
+    public Ocorrencia getOcorrencia() {
+        return ocorrencia;
+    }
+    
     public String getREG() {
         return REG;
     }
