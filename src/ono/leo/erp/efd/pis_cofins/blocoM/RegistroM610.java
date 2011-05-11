@@ -33,6 +33,7 @@ public class RegistroM610 extends Registro {
         REG = "M610";
         REG_PAI = "M600";
         nivel = 3;
+        ocorrencia = Ocorrencia.UM_PARA_MUITOS;
         obrigatoriedade = Obrigatoriedade.OC; // no layout esta como obrigatorio
     }
 

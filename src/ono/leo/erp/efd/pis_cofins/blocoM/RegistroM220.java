@@ -23,6 +23,7 @@ public class RegistroM220 extends Registro {
         REG = "M220";
         REG_PAI = "M210";
         nivel = 4;
+        ocorrencia = Ocorrencia.UM_PARA_MUITOS;
         obrigatoriedade = Obrigatoriedade.OC;
     }
 

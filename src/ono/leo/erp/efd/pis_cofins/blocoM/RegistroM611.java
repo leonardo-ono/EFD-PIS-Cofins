@@ -22,6 +22,7 @@ public class RegistroM611 extends Registro {
         REG = "M611";
         REG_PAI = "M610";
         nivel = 4;
+        ocorrencia = Ocorrencia.UM_PARA_UM;
         obrigatoriedade = Obrigatoriedade.O_SE; // se IND_NAT_PJ do registro 
                                                 // 0000 for igual a 01
     }

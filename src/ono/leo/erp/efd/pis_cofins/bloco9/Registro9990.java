@@ -16,6 +16,7 @@ public class Registro9990 extends RegistroX990 {
         REG = "9990";
         REG_PAI = "0000";
         nivel = 1;
+        ocorrencia = Ocorrencia.UM;
         obrigatoriedade = Obrigatoriedade.O;
     }
     

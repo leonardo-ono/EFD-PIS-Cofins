@@ -27,6 +27,7 @@ public class Registro1600 extends Registro {
         REG = "1600";
         REG_PAI = "1001";
         nivel = 2;
+        ocorrencia = Ocorrencia.VARIOS;
         obrigatoriedade = Obrigatoriedade.OC;
     }
 

@@ -39,6 +39,7 @@ public class Registro1501 extends Registro {
         REG = "1501";
         REG_PAI = "1500";
         nivel = 3;
+        ocorrencia = Ocorrencia.UM_PARA_MUITOS;
         obrigatoriedade = Obrigatoriedade.O_SE; // se VL_CRED_EXT_APU do
                                                 // registro 1500 > 0
     }

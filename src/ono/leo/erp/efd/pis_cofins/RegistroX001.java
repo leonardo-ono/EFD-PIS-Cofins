@@ -22,6 +22,7 @@ public abstract class RegistroX001 extends Registro {
 
     public RegistroX001() {
         nivel = 1;
+        ocorrencia = Ocorrencia.UM;
     }
 
     public String getIND_MOV() {

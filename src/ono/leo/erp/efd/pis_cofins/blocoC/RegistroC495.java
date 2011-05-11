@@ -28,6 +28,7 @@ public class RegistroC495 extends Registro {
         REG = "C495";
         REG_PAI = "C490";
         nivel = 4;
+        ocorrencia = Ocorrencia.UM_PARA_MUITOS;
         obrigatoriedade = Obrigatoriedade.OC;
     }
 

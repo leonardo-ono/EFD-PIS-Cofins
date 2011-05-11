@@ -21,6 +21,7 @@ public class Registro9999 extends Registro {
         REG = "9999";
         REG_PAI = "ROOT";
         nivel = 0;
+        ocorrencia = Ocorrencia.UM;
         obrigatoriedade = Obrigatoriedade.O;
     }
     

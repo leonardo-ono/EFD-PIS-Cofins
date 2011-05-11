@@ -19,6 +19,7 @@ public class RegistroC509 extends Registro {
         REG = "C509";
         REG_PAI = "C500";
         nivel = 4;
+        ocorrencia = Ocorrencia.UM_PARA_MUITOS;
         obrigatoriedade = Obrigatoriedade.OC;
     }
 

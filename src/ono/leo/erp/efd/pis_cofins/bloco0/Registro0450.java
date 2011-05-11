@@ -18,6 +18,7 @@ import ono.leo.erp.efd.pis_cofins.Registro.Obrigatoriedade;
         REG = "0450";
         REG_PAI = "0140";
         nivel = 3;
+        ocorrencia = Ocorrencia.UM_PARA_MUITOS;
         obrigatoriedade = Obrigatoriedade.OC;
     }
 

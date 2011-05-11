@@ -30,6 +30,7 @@ public class RegistroM600 extends Registro {
         REG = "M600";
         REG_PAI = "M001";
         nivel = 2;
+        ocorrencia = Ocorrencia.UM;
         obrigatoriedade = Obrigatoriedade.O;
     }
 

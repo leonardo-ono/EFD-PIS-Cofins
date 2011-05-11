@@ -21,6 +21,7 @@ public class RegistroF700 extends Registro {
         REG = "F700";
         REG_PAI = "F010";
         nivel = 3;
+        ocorrencia = Ocorrencia.UM_PARA_MUITOS;
         obrigatoriedade = Obrigatoriedade.OC;
     }
 

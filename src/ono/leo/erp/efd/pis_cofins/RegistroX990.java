@@ -15,6 +15,7 @@ public abstract class RegistroX990 extends Registro {
 
     public RegistroX990() {
         nivel = 1;
+        ocorrencia = Ocorrencia.UM;
     }
 
     public String getQTD_LIN() {

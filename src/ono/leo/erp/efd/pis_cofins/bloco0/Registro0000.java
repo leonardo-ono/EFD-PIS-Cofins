@@ -19,6 +19,13 @@ import ono.leo.erp.efd.pis_cofins.blocoF.RegistroF990;
 import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM001;
 import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM990;
 
+/**
+ * Registro 0000. 
+ * Abertura do arquivo digital e identificacao da pessoa juridica.
+ * 
+ * @author Leonardo Ono (ono.leo@gmail.com)
+ * @since 1.00.00 (22/02/2011 14:56)
+ */
 public class Registro0000 extends Registro {
     
     private String COD_VER = "002";
@@ -73,6 +80,7 @@ public class Registro0000 extends Registro {
         REG = "0000";
         REG_PAI = "ROOT";
         nivel = 0;
+        ocorrencia = Ocorrencia.UM;
         obrigatoriedade = Obrigatoriedade.O;
         adicionarTodosRegistrosDeAberturaEncerramentoDeBloco();
     }

@@ -20,6 +20,7 @@ public class Registro9900 extends Registro {
         REG = "9900";
         REG_PAI = "9001";
         nivel = 2;
+        ocorrencia = Ocorrencia.VARIOS;
         obrigatoriedade = Obrigatoriedade.O;
         this.REG_BLC = REG_BLC;
     }
