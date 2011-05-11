@@ -77,7 +77,7 @@ public abstract class Registro implements Comparable<Registro> {
         return REG_PAI;
     }
 
-    public static Registro9001 getRegistro9001() {
+    public static Registro9001 getRegistro9001Static() {
         return registro9001;
     }
 

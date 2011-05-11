@@ -66,7 +66,7 @@ public class Registro0000 extends Registro {
     private Registro1990 registro1990 = new Registro1990();
 
     // Bloco 9
-    private Registro9001 registro9001 = Registro.getRegistro9001();
+    private Registro9001 registro9001 = Registro.getRegistro9001Static();
     private Registro9990 registro9990 = new Registro9990();    
 
     public Registro0000() {
@@ -197,6 +197,10 @@ public class Registro0000 extends Registro {
 
     public Registro1990 getRegistro1990() {
         return registro1990;
+    }
+
+    public Registro9001 getRegistro9001() {
+        return registro9001;
     }
 
     public Registro9990 getRegistro9990() {
