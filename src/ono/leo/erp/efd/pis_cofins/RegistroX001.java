@@ -1,5 +1,7 @@
 package ono.leo.erp.efd.pis_cofins;
 
+import java.util.Collections;
+
 /**
  * Classe abstrata para Registros X001 do layout EFD-PIS/COFINS.
  * 
@@ -28,6 +30,12 @@ public abstract class RegistroX001 extends Registro {
 
     public void setIND_MOV(String IND_MOV) {
         this.IND_MOV = IND_MOV;
+    }
+
+    @Override
+    public String gerarLinha() {
+        Collections.sort(registrosFilhos);
+        return super.gerarLinha();
     }
     
 }
