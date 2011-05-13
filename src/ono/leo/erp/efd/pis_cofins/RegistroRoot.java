@@ -15,7 +15,7 @@ import ono.leo.erp.efd.pis_cofins.bloco9.Registro9999;
  * 
  * RegistroRoot rr = new RegistroRoot();
  * Registro0100 r0100 = new Registro0100();
- * rr.getRegistro0000().addRegistroFilho(r0100);
+ * rr.getRegistro0000().getRegistro0001().addRegistroFilho(r0100);
  * rr.gerar("c:/arquivo.txt");
  *
  * @author Leonardo Ono (ono.leo@gmail.com)
@@ -68,7 +68,8 @@ public class RegistroRoot extends Registro {
                 + "exemplo abaixo: \n\n"
                 + "RegistroRoot rr = new RegistroRoot(); \n"
                 + "Registro0100 r0100 = new Registro0100(); \n"
-                + "rr.getRegistro0000().addRegistroFilho(r0100); \n");
+                + "rr.getRegistro0000().getRegistro0001()"
+                + ".addRegistroFilho(r0100); \n");
     }
     
     @Override
