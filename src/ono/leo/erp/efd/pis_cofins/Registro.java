@@ -8,11 +8,11 @@ import ono.leo.erp.efd.pis_cofins.bloco9.Registro9001;
 import ono.leo.erp.efd.pis_cofins.bloco9.Registro9900;
 
 /**
-* Classe abstrata para um Registro do layout EFD PIS/COFINS.
-*
-* @author Leonardo Ono (ono.leo@gmail.com)
-* @since 1.00.00 (03/03/2011 10:37)
-*/
+ * Classe abstrata para um Registro do layout EFD PIS/COFINS.
+ *
+ * @author Leonardo Ono (ono.leo@gmail.com)
+ * @since 1.00.00 (03/03/2011 10:37)
+ */
 public abstract class Registro implements Comparable<Registro> {
 
     /**
@@ -77,10 +77,6 @@ public abstract class Registro implements Comparable<Registro> {
 
     public Obrigatoriedade getObrigatoriedade() {
         return obrigatoriedade;
-    }
-
-    protected void setObrigatoriedade(Obrigatoriedade obrigatoriedade) {
-        this.obrigatoriedade = obrigatoriedade;
     }
 
     public int getNivel() {
