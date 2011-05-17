@@ -116,11 +116,16 @@ public abstract class Registro implements Comparable<Registro> {
     }
     
     public void addRegistroFilho(Registro registro) {
-        if (!REG.equals(registro.getREG_PAI())) 
+        if (registro == null || !REG.equals(registro.getREG_PAI())) 
             throw new RuntimeException("Registro filho invalido !");
         
-        if (registro == null) return;
         if (registrosFilhos.contains(registro)) return;
+        if (registro instanceof Registro9900) {
+            throw new RuntimeException(
+                      "Nao e permitido adicionar o registro 9900 !\n"
+                    + "Esse registro e criado e adicionado automaticamente "
+                    + "conforme outros registros vao sendo adicionados !");
+        }
         if (this instanceof RegistroX001 
                 && !(registro instanceof RegistroX001)
                 && !(registro instanceof RegistroX990)) {
