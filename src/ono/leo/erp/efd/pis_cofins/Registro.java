@@ -126,6 +126,10 @@ public abstract class Registro implements Comparable<Registro> {
                     + "Esse registro e criado e adicionado automaticamente "
                     + "conforme outros registros vao sendo adicionados !");
         }
+        addRegistroFilhoInterno(registro);
+    }
+
+    private void addRegistroFilhoInterno(Registro registro) {
         if (this instanceof RegistroX001 
                 && !(registro instanceof RegistroX001)
                 && !(registro instanceof RegistroX990)) {
@@ -152,7 +156,7 @@ public abstract class Registro implements Comparable<Registro> {
         if (reg9900 == null) {
             reg9900 = new Registro9900(registro.getREG());
             registros9900.put(registro.getREG(), reg9900);
-            registro9001.addRegistroFilho(reg9900);
+            ((Registro) registro9001).addRegistroFilhoInterno(reg9900);
         }
         reg9900.incrementarQTD_REG_BLC();
     }
