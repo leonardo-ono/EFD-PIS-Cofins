@@ -70,4 +70,13 @@ public class RegistroC400 extends Registro {
         return linha;
     }
 
+    @Override
+    public void preencherValoresDosCamposPelaLinha(String linha) {
+        String[] valores = linha.split("\\|");
+        COD_MOD = valores[2];
+        ECF_MOD = valores[3];
+        ECF_FAB = valores[4];
+        ECF_CX = valores[5];        
+    }
+    
 }
