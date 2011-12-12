@@ -107,12 +107,19 @@ public abstract class Registro implements Comparable<Registro> {
         return bloco;
     }
     
+    public void preencherValoresDosCamposPelaLinha(String linha) {
+    }
+    
     public String gerarLinha() {
         StringBuilder sb = new StringBuilder();
         for (Registro registro : registrosFilhos) {
             sb.append(registro.gerarLinha());
         }
         return sb.toString();
+    }
+
+    public List<Registro> getRegistrosFilhos() {
+        return registrosFilhos;
     }
     
     public void addRegistroFilho(Registro registro) {
