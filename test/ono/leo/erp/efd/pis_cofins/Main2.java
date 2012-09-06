@@ -29,10 +29,12 @@ import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM990;
  * geracao do arquivo EFD-PIS/Cofins.
  * 
  * Ao executar, o codigo desta classe ira gerar um arquivo EFD-PIS/Cofins 
- * de exemplo simples que pelo menos passa no validador PVA versao 1.0.0 Beta.
+ * de exemplo simples.
+ * 
+ * Testado no validador PVA versao 2.0.1.a.
  * 
  * @author Leonardo Ono (ono.leo@gmail.com)
- * @since 1.00.00 (11/05/2011 11:39)
+ * @since 1.00.00 (06/09/2012 13:11)
  */
 public class Main2 {
     
@@ -42,7 +44,7 @@ public class Main2 {
          * Crie um novo objeto RegistroRoot.
          */
         RegistroRoot registroRoot = new RegistroRoot();
-
+        
         /**
          * Ao instanciar um novo RegistroRoot, os registros de nivel 0,
          * ou seja, os registros 0000 e 9999 tambem ja sao criados e 
@@ -132,7 +134,7 @@ public class Main2 {
          * conforme codigo abaixo:
          */ 
         registroRoot.gerar("c:/teste_efd_pis_cofins.txt");
-        
+
     }
 
 }
