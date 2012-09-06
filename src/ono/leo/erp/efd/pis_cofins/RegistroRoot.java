@@ -51,7 +51,7 @@ public class RegistroRoot extends Registro {
         PrintWriter pw = null;
         try {
             pw = new PrintWriter(caminho);
-            pw.println(this.gerarLinha());
+            pw.print(this.gerarLinha());
             pw.close();
         } catch (Exception ex) {
             throw ex;
