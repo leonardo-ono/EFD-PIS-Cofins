@@ -15,7 +15,7 @@ public class Registro0110 extends Registro {
     private String COD_INC_TRIB = "1";
     private String IND_APRO_CRED = "1";
     private String COD_TIPO_CONT = "1";
-    private String IND_REG_CUM = "9";
+    private String IND_REG_CUM = "";
     
     public Registro0110() {
         REG = "0110";
