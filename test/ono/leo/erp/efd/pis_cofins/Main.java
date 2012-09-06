@@ -14,19 +14,16 @@ import ono.leo.erp.efd.pis_cofins.blocoC.RegistroC010;
 import ono.leo.erp.efd.pis_cofins.blocoC.RegistroC100;
 import ono.leo.erp.efd.pis_cofins.blocoC.RegistroC170;
 import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM001;
-import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM100;
-import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM105;
 import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM200;
-import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM500;
-import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM505;
 import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM600;
 
 /**
- * Gera um arquivo EFD-PIS/Cofins de exemplo simples que pelo menos
- * passa no validador PVA versao 1.0.0 Beta.
+ * Gera um arquivo EFD-PIS/Cofins de exemplo simples.
+ * 
+ * Testado no validador PVA versao 2.0.1.a.
  * 
  * @author Leonardo Ono (ono.leo@gmail.com)
- * @since 1.00.00 (10/03/2011 16:43)
+ * @since 1.00.00 (06/09/2012 12:51)
  */
 public class Main {
     
@@ -46,23 +43,11 @@ public class Main {
     static RegistroC010 registroC010 = new RegistroC010(); 
     // Cabecalho da NFe
     static RegistroC100 registroC100 = new RegistroC100(); 
-    // Item da NFe
-    static RegistroC170 registroC170 = new RegistroC170(); 
-
-    // Bloco M
     
-    // Credito de PIS/PASEP relativo ao periodo.
-    static RegistroM100 registroM100 = new RegistroM100(); 
-    // Detalhamento da base de calculo do credito apurado no periodo PIS/PASEP.
-    static RegistroM105 registroM105 = new RegistroM105(); 
+    // Bloco M
+
     static RegistroM200 registroM200 = new RegistroM200();
-    // Credito de COFINS relativo ao periodo.
-    static RegistroM500 registroM500 = new RegistroM500(); 
-    // Detalhamento da base de calculo do credito apurado no periodo - Cofins.
-    static RegistroM505 registroM505 = new RegistroM505(); 
-    // TODO Registro M210 e obrigatorio ?
     static RegistroM600 registroM600 = new RegistroM600();
-    // TODO Registro M610 e obrigatorio ?
 
     public static void main(String[] args) {
 
@@ -78,9 +63,10 @@ public class Main {
         // Registro0150 Fornecedor
         registro0140.addRegistroFilho(criarFornecedorTeste()); 
         // Registro0190 Unidade
-        registro0140.addRegistroFilho(criarUnidadeTeste()); 
+        registro0140.addRegistroFilho(criarUnidadeTeste_1()); 
+        registro0140.addRegistroFilho(criarUnidadeTeste_2()); 
         // Registro0200 Produto
-        registro0140.addRegistroFilho(criarProdutoTeste()); 
+        registro0140.addRegistroFilho(criarProdutoTeste_1()); 
         // Registro0400 CFOP
         registro0140.addRegistroFilho(criarCfopTeste()); 
 
@@ -89,28 +75,23 @@ public class Main {
         
         // Identificacao do estabelecimento
         registroC001.addRegistroFilho(registroC010); 
-        // Cabecalho da NFe
+        
+        // Cabecalho NF
+        registroC100.setCOD_MOD("01");
+        registroC100.setCOD_PART("1");
+        registroC100.setVL_PIS("5,22");
+        registroC100.setVL_COFINS("24,02");
         registroC010.addRegistroFilho(registroC100); 
+        
         // Item da NFe
-        registroC100.addRegistroFilho(registroC170); 
-
+        registroC100.addRegistroFilho(criarItemDaNFeTeste_1()); 
+        registroC100.addRegistroFilho(criarItemDaNFeTeste_2()); 
+        
         RegistroM001 registroM001 
                 = registroRoot.getRegistro0000().getRegistroM001();
         
-        // Credito de PIS/PASEP relativo ao periodo.
-        registroM001.addRegistroFilho(registroM100); 
-        // Detalhamento da base de calc do credito apurado no periodo PIS/PASEP.
-        registroM100.addRegistroFilho(registroM105); 
-        
         registroM001.addRegistroFilho(registroM200);
-        // TODO Registro M210 e obrigatorio ?
-        // Credito de COFINS relativo ao periodo.
-        registroM001.addRegistroFilho(registroM500); 
-        // Detalhamento da base de calc do credito apurado no periodo - Cofins.
-        registroM500.addRegistroFilho(registroM505); 
-        
         registroM001.addRegistroFilho(registroM600);
-        // TODO Registro M610 e obrigatorio ?
         
         String caminho = "c:/teste_efd_pis_cofins.txt";
         
@@ -130,29 +111,45 @@ public class Main {
 
     private static Registro0150 criarFornecedorTeste() {
         Registro0150 fornecedor = new Registro0150();
+        fornecedor.setCOD_PART("2");
+        fornecedor.setBAIRRO("BAIRRO AAA");
+        fornecedor.setCNPJ("");
+        fornecedor.setCPF("88340920588"); // Gerado pelo http://www.geradorcpf.com/ 
+        fornecedor.setCOD_MUN("3550308");
+        fornecedor.setCOD_PAIS("01058");
+        fornecedor.setEND("RUA AAA");
+        fornecedor.setNUM("99");
+        fornecedor.setNOME("NOME PESSOA FISICA");
         return fornecedor;
     }
     
     private static Registro0150 criarClienteTeste() {
         Registro0150 cliente = new Registro0150();
         cliente.setCOD_PART("1");
-        cliente.setBAIRRO("BAIRRO");
+        cliente.setBAIRRO("BAIRRO BBB");
         cliente.setCNPJ("");
         cliente.setCPF("17898468970"); // Gerado pelo http://www.geradorcpf.com/
         cliente.setCOD_MUN("3550308");
         cliente.setCOD_PAIS("01058");
-        cliente.setEND("RUA XXX");
+        cliente.setEND("RUA BBB");
         cliente.setNUM("99");
         cliente.setNOME("NOME PESSOA FISICA");
         return cliente;
     }
     
-    private static Registro0190 criarUnidadeTeste() {
+    private static Registro0190 criarUnidadeTeste_1() {
         Registro0190 unidade = new Registro0190();
         return unidade;
     }
     
-    private static Registro0200 criarProdutoTeste() {
+    private static Registro0190 criarUnidadeTeste_2() {
+        Registro0190 unidade = new Registro0190();
+        unidade.setUNID("PC");
+        unidade.setDESC("PECA");
+        return unidade;
+    }
+    
+    private static Registro0200 criarProdutoTeste_1() {
         Registro0200 produto = new Registro0200();
         return produto;
     }
@@ -160,6 +157,24 @@ public class Main {
     private static Registro0400 criarCfopTeste() {
         Registro0400 cfop = new Registro0400();
         return cfop;
+    }
+    
+    private static RegistroC170 criarItemDaNFeTeste_1() {
+        RegistroC170 item = new RegistroC170();
+        item.setNUM_ITEM("1");
+        item.setCST_PIS("70");
+        item.setCST_COFINS("70");
+        return item;
+    }
+    
+    private static RegistroC170 criarItemDaNFeTeste_2() {
+        RegistroC170 item = new RegistroC170();
+        item.setNUM_ITEM("2");
+        item.setVL_ITEM("123,45");
+        item.setUNID("PC");
+        item.setCST_PIS("70");
+        item.setCST_COFINS("70");
+        return item;
     }
     
 }
