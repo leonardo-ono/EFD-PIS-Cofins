@@ -28,16 +28,17 @@ import ono.leo.erp.efd.pis_cofins.blocoM.RegistroM990;
  */
 public class Registro0000 extends Registro {
     
-    private String COD_VER = "002";
+    private String COD_VER = "003";
     private String TIPO_ESCRIT = "0";
     private String IND_SIT_ESP = "";
     private String NUM_REC_ANTERIOR = "";
-    private String DT_INI = "01012011";
-    private String DT_FIN = "31012011";
+    private String DT_INI = "01092012";
+    private String DT_FIN = "30092012";
     private String NOME = "EMPRESA";
     private String CNPJ = "22222222000191";
     private String UF = "SP";
     private String COD_MUN = "3513801";
+    private String IE = "";
     private String SUFRAMA = "";
     private String IND_NAT_PJ = "00";
     private String IND_ATIV = "0";
@@ -188,6 +189,14 @@ public class Registro0000 extends Registro {
     public void setUF(String UF) {
         this.UF = UF;
     }
+
+    public String getIE() {
+        return IE;
+    }
+
+    public void setIE(String IE) {
+        this.IE = IE;
+    }
     
     // -- Registros de abertura e encerramento de bloco --
 
@@ -269,6 +278,7 @@ public class Registro0000 extends Registro {
         linha += "|" + CNPJ;
         linha += "|" + UF;
         linha += "|" + COD_MUN;
+        //linha += "|" + IE; // <- segundo apostila da PRODEP, deveria vir aqui, porem nao passa no validador
         linha += "|" + SUFRAMA;
         linha += "|" + IND_NAT_PJ;
         linha += "|" + IND_ATIV ;
@@ -284,7 +294,7 @@ public class Registro0000 extends Registro {
             
             throw new RuntimeException("Nao e permitido adicionar "
                     + "registros de abertura ou encerramento no "
-                    + "registro 0000 !\nEsses registros serao criados "
+                    + "registro 0000 !\nEsses registros sao criados "
                     + "e adicionados automaticamente !");
         }
         super.addRegistroFilho(registro);
